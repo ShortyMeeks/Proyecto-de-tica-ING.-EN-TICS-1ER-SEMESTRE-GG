@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Diccionario de Ética ⚜️| RxZy Roberto Armenta</title>
+	<style>
+    .grid-container{
+      margin-top: 2px;
+      margin bottom: 10px;
+      position: relative;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      gap: 35px 15px;
+      justify-content: center;
+      padding: 25px;
+    }
+
+    .botones{
+    text-align: center; 
+    font-family: Berlin Sans FB;
+    font-size: 2em;
+    margin: 2px;
+    padding: 10px 5px;
+    width: 100%;
+    background-color: #ae7f;
+    border: none;
+    outline: none;
+    box-shadow: 10px 10px 0 #00a8c6;
+    color: #ffffff;
+    border-radius: 15px;
+    }
+    /* Estilos para el cuadro de alerta */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+    .alert-box {
+      display: inline-block;
+      font-size: 2rem;
+      font-family: Berlin Sans FB;
+      background-color: white;
+      padding: 3vw; /* Usando unidades relativas */
+      border-radius: 35px;
+      text-align: center;
+      box-shadow: 5px 15px 20px rgba(255, 195, 100, 3);
+      max-width: 80%;
+      max-height: 80%; /* Altura máxima */
+      overflow-y: auto; /* Scroll si el contenido es demasiado grande */
+    }
+
+    .alert-box p{
+      text-align: center;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .cerrarbtn{
+      font-size: 2rem;
+      box-shadow: 0px 0px 30px rgba(125, 100, 213, 5);
+      border-radius: 25px;
+      position: center;
+      border: no;
+      background-color: rgba(125, 54, 230, 2);
+      color: white;
+      font-family: Arial black;
+    }
+
+    /* Media query para ajustar el tamaño del cuadro de alerta en pantallas más pequeñas */
+    @media (max-width: 400px) {
+    .alert-box {
+    position: fixed;
+    max-width: 80%;
+    max-height: 80%;
+    overflow-y: scroll; /* Forzar desplazamiento en dispositivos móviles */
+    -webkit-overflow-scrolling: touch; /* Para mejorar el desplazamiento en dispositivos basados en WebKit */
+  }
+  }
+</style>
+<link rel="stylesheet" type="text/css" href="../css/style.css"> 
+</head>
+<body>
+	<header>
+		<div class="content">
+		
+			<div class="menu container">
+				<a href="#" class="logo">Diccionario de Ética</a>
+				<input type="checkbox" id="menu"/>
+				<label for="menu">
+					<img src="../img/menu.png" class="menu-icono">
+				</label>
+				<nav class="navbar">
+					<ul>
+						<li><a href="../index.html">Inicio</a></li>
+						<li><a href="../pages/acercademi.html">Acerca de mi</a></li>
+						<li><a href="../pages/palabras.html">Lista de palabras</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+<h1 class="acerca">Palabras del diccionario</h1>	
+<img src="../img/diccionario.gif" class="pinguino">
+<!-- Botón -->
+<div class="grid-container">
+<button id="mostrarAlertaA" class="botones">Letra A</button>
+<button id="mostrarAlertaB" class="botones">Letra B</button>
+<button id="mostrarAlertaC" class="botones">Letra C</button>
+<button id="mostrarAlertaD" class="botones">Letra D</button>
+<button id="mostrarAlertaE" class="botones">Letra E</button>
+<button id="mostrarAlertaF" class="botones">Letra F</button>
+<button id="mostrarAlertaG" class="botones">Letra G</button>
+<button id="mostrarAlertaH" class="botones">Letra H</button>
+<button id="mostrarAlertaI" class="botones">Letra I</button>
+<button id="mostrarAlertaJ" class="botones">Letra J</button>
+<button id="mostrarAlertaK" class="botones">Letra K</button>
+<button id="mostrarAlertaL" class="botones">Letra L</button>
+<button id="mostrarAlertaM" class="botones">Letra M</button>
+<button id="mostrarAlertaN" class="botones">Letra N</button>
+<button id="mostrarAlertaO" class="botones">Letra O</button>
+<button id="mostrarAlertaP" class="botones">Letra P</button>
+<button id="mostrarAlertaR" class="botones">Letra R</button>
+<button id="mostrarAlertaS" class="botones">Letra S</button>
+<button id="mostrarAlertaT" class="botones">Letra T</button>
+<button id="mostrarAlertaU" class="botones">Letra U</button>
+<button id="mostrarAlertaV" class="botones">Letra V</button>
+</div>
+<!-- Contenedor de la alerta -->
+<div class="overlay" id="overlay">
+  <div class="alert-box">
+    <p id="contenidoAlerta"></p>
+    <button onclick="cerrarAlerta()" class="cerrarbtn">Cerrar</button>
+  </div>
+</div>
+<!--::Pie de pagina::-->
+	<footer class="pie-pagina">
+		<div class="grupo-1">
+			<div class="box">
+				<figure>
+					<a href="#">
+						<img src="../img/libro-abierto.png" alt="Logo de pagina web">
+					</a>
+				</figure>
+			</div>
+			<div class="box">
+				<h2 class="medio">Espero les guste este proyecto</h2>
+			</div>
+			<div class="box">
+				<h2 class="final">Sigueme</h2>
+				<div class="red-social">
+					<a href="https://www.facebook.com/WhoisRxZy/?locale=es_LA"><img src="../img/facebook.png" width="10%" height="10%"></a>
+					<a href="https://www.instagram.com/rxzy_._/"><img src="../img/ig.png" width="10%" height="10%"></a>
+				</div>
+			</div>
+		</div>
+		<div class="grupo-2">
+			<small>&copy; 2023 <b>Roberto Armenta</b> - Todos los Derechos Reservados.</small>
+		</div>
+	</footer>
+	<!-- Uso de script para mostrar las palabras por medio de una alerta y estilizarla posteriormente para que se mire linda -->
+<script>
+  // Función para mostrar la alerta
+  function mostrarAlerta(contenido) {
+    document.getElementById('contenidoAlerta').innerHTML = contenido;
+    document.getElementById('overlay').style.display = 'flex';
+  }
+
+  // Función para cerrar la alerta
+  function cerrarAlerta() {
+    document.getElementById('overlay').style.display = 'none';
+  }
+
+  // Asociar evento al botón
+  document.getElementById('mostrarAlertaA').addEventListener('click', function() {
+    var palabrasConA = `
+    Haz dado click a palabras con la letra A: las palabras con sus significados son las siguientes.<br><br>
+      Abnegación: Actitud de renunciar a algo propio para beneficio de los demás.<br><br>
+      Absolutismo moral: Teoría que sostiene que los principios morales son universales y aplicables a todos los seres humanos, independientemente de su cultura o contexto.<br><br>
+      Abuso: Acción de hacer daño o violencia a una persona o cosa.<br><br>
+      Acción comunicativa: Proceso de comunicación entre personas con el objetivo de llegar a un acuerdo.<br><br>
+      Acción moral: Acción que se realiza de acuerdo con los principios morales.<br><br>
+      Acción viciosa: Acción que va en contra de los valores morales de una persona o sociedad.<br><br>
+      Acción virtuosa: Acción que está de acuerdo con los valores morales de una persona o sociedad.<br><br>
+      Acción: Actividad que realiza una persona o un agente.<br><br>
+      Aceptación: Actitud de reconocer y aceptar las cosas tal y como son.<br><br>
+      Acoso: Comportamiento repetido y deliberado que tiene como objetivo intimidar, molestar o agredir a otra persona.<br><br>
+      Acusación: Imposición de una responsabilidad moral a otra persona.<br><br>
+      Aforismo: Sentencia breve y concisa que expresa un principio moral.<br><br>
+      Agresión: Acto de causar daño o violencia a otra persona.<br><br>
+      Ahimsa: Principio de la no violencia, fundamental en el hinduismo y el budismo.<br><br>
+      Altruismo: Actitud o disposición a preocuparse por el bienestar de los demás.<br><br>
+      Ambición: Deseo intenso de conseguir algo, especialmente poder o riqueza.<br><br>
+      Amistad: Relación de afecto y confianza entre dos o más personas.<br><br>
+      Amnistía: Perdón general y público concedido por un gobierno a los autores de delitos políticos o comunes.<br><br>
+      Amor: Sentimiento de afecto y cariño hacia los demás.<br><br>
+      Antinatalismo: Doctrina que sostiene que es moralmente incorrecto traer niños al mundo.<br><br>
+      Antivalor: Actitud o conducta que se opone a los valores morales. Es decir, es algo que se considera malo o indeseable desde el punto de vista ético.<br><br>
+      Antropocentrismo: Doctrina que considera al ser humano como el centro de todo.<br><br>
+      Aporofobia: Discriminación o rechazo hacia las personas pobres.<br><br>
+      Apropiación cultural: Proceso por el cual una cultura toma elementos de otra cultura sin su consentimiento o reconocimiento.<br><br>
+      Autocontrol: Es la capacidad de controlar nuestros propios impulsos y emociones.<br><br>
+      Autocracia: Sistema político en el que el poder reside en una sola persona o grupo.<br><br>
+      Autocrítica: Capacidad de reflexionar sobre los propios errores y tomar medidas para corregirlos.<br><br>
+      Autodestrucción: Acto de causar daño o destrucción a sí mismo.<br><br>
+      Autodeterminación: Derecho de los pueblos a decidir su propio destino.<br><br>
+      Autoestima: Valoración positiva que una persona tiene de sí misma.<br><br>
+      Autonomía: Capacidad de las personas de actuar de acuerdo con sus propios valores y creencias, sin ser forzadas por otros.<br><br>
+      Avaricia: Deseo desordenado de riquezas y bienes materiales.<br><br>
+      Axiología: Rama de la filosofía que se ocupa del estudio de los valores.<br><br>
+    `;
+    mostrarAlerta(palabrasConA);
+  });
+
+
+   document.getElementById('mostrarAlertaB').addEventListener('click', function() {
+    var palabrasConB = `
+    Haz dado click a palabras con la letra B: las palabras con sus significados son las siguientes.<br><br>
+    Beneficencia: Principio ético que define el propósito de toda acción profesional como el de mejorar las condiciones de vida y de relación de los sujetos, incrementando el bienestar de las personas, grupos, comunidades e instituciones atendidas.<br><br>
+    Benevolente: Que desea el bien de los demás.<br><br>
+    Bien común: Conjunto de bienes que benefician a la sociedad en su conjunto.<br><br>
+    Bien: Aquello que es deseable y que se considera correcto."<br><br>
+    Bioética: Rama de la ética que se ocupa de los problemas éticos relacionados con la vida, la salud y la muerte.<br><br>
+    Bondad: Propiedad de las acciones que las hace buenas.<br><br>
+  `;
+    mostrarAlerta(palabrasConB);
+  });
+
+    document.getElementById('mostrarAlertaC').addEventListener('click', function() {
+    var palabrasConC = `
+    Haz dado click a palabras con la letra C: las palabras con sus significados son las siguientes.<br><br>
+    Calumnia: Difamación o injuria con la intención de dañar la reputación de otra persona.<br><br>
+    Capitalismo: Sistema económico basado en la propiedad privada de los medios de producción y la búsqueda del beneficio.<br><br>
+    Carácter: Conjunto de rasgos psicológicos que determinan el comportamiento de una persona.<br><br>
+    Caridad: Actitud de ayudar a los demás, especialmente a los que más lo necesitan.<br><br>
+    Castigo: Sanción que se impone a una persona por haber cometido una falta o un delito.<br><br>
+    Ciberética: Rama de la ética que se ocupa de los problemas éticos relacionados con la tecnología digital.<br><br>
+    Ciencia: Conjunto de conocimientos obtenidos a través de la observación, la experimentación y el razonamiento.<br><br>
+    Ciudadanía global: Sentido de pertenencia a una comunidad mundial, más allá de los límites nacionales.<br><br>
+    Código de conducta: Guía de comportamiento o conducta que delimita la actuación del personal en situaciones concretas, atendiendo a las funciones y actividades propias de la institución.<br><br>
+    Código ético: Documento adoptado por una institución que busca guiar a sus miembros para la toma práctica de decisiones y cuya violación conlleva una acción disciplinaria.<br><br>
+    Compasión: Capacidad de sentir empatía y comprensión por los demás.<br><br>
+    Comportamiento ético personal: Actuar de acuerdo con principios éticos en la vida cotidiana.<br><br>
+    Comportamiento ético social: Aplicación de principios éticos en las interacciones y dinámicas sociales.<br><br>
+    Comportamiento: Manera de actuar de una persona o de un grupo.<br><br>
+    Comunidad: Grupo de personas que comparten intereses, valores o creencias comunes.<br><br>
+    Conciencia moral: Capacidad de las personas de juzgar sus propias acciones como buenas o malas.<br><br>
+    Conciencia social: Conciencia de los problemas sociales y de la necesidad de actuar para resolverlos.<br><br>
+    Conciencia: Capacidad de las personas de reflexionar sobre sus propias acciones y de juzgarlas como buenas o malas.<br><br>
+    Confianza: Creencia en la fiabilidad o la sinceridad de otra persona.<br><br>
+    Conflicto de intereses: Situación en la que una persona o entidad se encuentra en una posición en la que sus intereses personales, financieros o de otro tipo podrían influir en su capacidad para tomar decisiones imparciales o justas en beneficio de otras personas o entidades a las que deben servir o representar.<br><br>
+    Conformismo: Tendencia a aceptar sin cuestionar las normas y valores establecidos.<br><br>
+    Consecuencialismo: Teoría ética que sostiene que la moralidad de una acción se determina por sus consecuencias.<br><br>
+    Consenso: Acuerdo o acuerdo entre dos o más personas.<br><br>
+    Consentimiento: Autorización o permiso para hacer algo.<br><br>
+    Conservadurismo: Tendencia a defender los valores tradicionales y a evitar los cambios.<br><br>
+    Constitución moral: Conjunto de normas morales básicas que rigen la conducta humana.<br><br>
+    Constitución: Documento jurídico que establece las normas básicas de un Estado.<br><br>
+    Convención: Acuerdo o costumbre que se establece por el uso.<br><br>
+    Convivencia: Forma de vida en la que las personas se relacionan entre sí de manera pacífica y respetuosa.<br><br>
+    Cooperación: Actitud de trabajar juntos para conseguir un objetivo común.<br><br>
+    Corrupción: Abuso de poder para beneficio personal.<br><br>
+    Cosmopolitismo: Doctrina que sostiene que todos los seres humanos son ciudadanos del mundo, independientemente de su nacionalidad o origen.<br><br>
+    Cosmovisión: Conjunto de creencias y valores que orientan la visión del mundo de una persona o grupo.<br><br>
+    Costumbre: Hábito o práctica que se considera aceptable o incluso obligatoria en una sociedad o grupo social.<br><br>
+    Crimen: Acción que viola la ley y es sancionada con pena de prisión.<br><br>
+    Crueldad: Actitud o comportamiento que causa sufrimiento o dolor a otra persona.<br><br>
+    Culpa: Sentimiento de remordimiento o remordimiento por una acción mala que se ha cometido.<br><br>
+  `;
+    mostrarAlerta(palabrasConC);
+  });
+
+     document.getElementById('mostrarAlertaD').addEventListener('click', function() {
+    var palabrasConD = `
+    Haz dado click a palabras con la letra D: las palabras con sus significados son las siguientes.<br><br>
+    Deber: Obligación moral de realizar una acción o abstenerse de realizarla.<br><br>
+    Decisión: Acto de elegir entre dos o más opciones.<br><br>
+    Democracia: Sistema político basado en la soberanía popular y el sufragio universal.<br><br>
+    Deontología: Rama de la ética que se ocupa del estudio de los deberes morales.<br><br>
+    Derechos humanos laborales: Garantías éticas en el ámbito laboral.<br><br>
+    Derechos Humanos: Garantías inherentes a todas las personas por su dignidad y libertad.<br><br>
+    Desarrollo sostenible: Desarrollo que satisface las necesidades del presente sin comprometer la capacidad de las generaciones futuras para satisfacer sus propias necesidades.<br><br>
+    Deshonestidad: Falta de honradez o rectitud.<br><br>
+    Desigualdad social: Existencia de diferencias significativas en el nivel de riqueza, poder o oportunidades entre las personas.<br><br>
+    Dignidad humana: Valor intrínseco de todos los seres humanos, que les otorga derechos y deberes morales.<br><br>
+    Dignidad: Valor intrínseco de todos los seres humanos, que les otorga derechos y deberes morales.<br><br>
+    Discriminación: Acto de tratar a una persona de manera injusta por motivos de raza, religión, sexo, orientación sexual, etc.<br><br>
+    Diversidad cultural: Existencia de diferentes culturas en una misma sociedad.<br><br>
+    Diversidad: Existencia de diferentes creencias, valores y formas de vida.<br><br>
+    Doble Moral: Principio o forma de proceder que implica una contradicción entre la moral proclamada y la conducta real.<br><br>
+    Dogmatismo: Es tomar una posición en dónde se desconoce la autonomía y la individualidad buscando imponer un criterio moral como verdadero, cierto e innegable.<br><br>
+    Dominio: Poder o autoridad que se ejerce sobre algo o alguien.<br><br>
+    Duda:Incertidumbre o falta de convicción sobre algo.<br><br>
+  `;
+    mostrarAlerta(palabrasConD);
+  });
+
+     document.getElementById('mostrarAlertaE').addEventListener('click', function() {
+    var palabrasConE = `
+    Haz dado click a palabras con la letra E: las palabras con sus significados son las siguientes.<br><br>
+    Egoísmo: Actitud de preocupación exclusiva por los propios intereses, sin consideración por los demás.<br><br>
+    Empatía: Capacidad de ponerse en el lugar de los demás y comprender sus sentimientos.<br><br>
+    Enemigo: Persona que tiene mala voluntad a otra y le desea o hace mal.<br><br>
+    Epistemología:La epistemología es la rama de la filosofía que estudia el conocimiento. Se ocupa de los orígenes, la naturaleza, los límites y los métodos del conocimiento.<br><br>
+    Equidad: Principio moral que establece que todos los individuos deben ser tratados de manera justa, incluso cuando no son iguales.<br><br>
+    Error: Acción o pensamiento que no se ajusta a la realidad.<br><br>
+    Esceptismo: Postura o visión ética que niega o se muestra crítica con la existencia de principios y reglas éticas universales y su posible construcción racional.<br><br>
+    Esencialismo: Doctrina que sostiene que las cosas tienen una esencia o naturaleza inmutable.<br><br>
+    Espontaneidad: Actitud de actuar sin reflexionar o planificar previamente.<br><br>
+    Ética académica: Es el conjunto de principios y normas morales que rigen el comportamiento y las prácticas dentro del ámbito educativo y académico.<br><br>
+    Ética aplicada: Rama de la ética que se ocupa de la aplicación de los principios éticos a problemas concretos.<br><br>
+    Ética del cuidado:Enfoque ético que se centra en las relaciones y los deberes que tenemos con los demás.<br><br>
+    Ética del investigador:Conjunto de normas morales que rigen el comportamiento de los investigadores científicos.<br><br>
+    Ética empresarial: Es el conjunto de normas y principios que rigen la práctica de los negocios. La ética empresarial se ocupa de los derechos y obligaciones de las empresas, los empleados y los consumidores.<br><br>
+    Ética profesional: Conjunto de principios y normas morales que rigen el comportamiento de los profesionales en el ejercicio de su profesión.<br><br>
+    Ética social: Rama de la ética que se ocupa de los problemas éticos relacionados con la sociedad en su conjunto.<br><br>
+    Ética: La ética es la rama de la filosofía que estudia la moral<br><br>
+    Etnografía: Estudio de los grupos humanos a través de la observación directa.<br><br>
+    Eutanasia: Acción de provocar la muerte de una persona enferma para aliviar su sufrimiento.<br><br>
+    Evaluación ética: Proceso de análisis y valoración moral de acciones, decisiones o situaciones para determinar su conformidad con los principios éticos.<br><br>
+    Evaluación moral: Proceso de analizar y juzgar moralmente una situación, acción o decisión basada en principios éticos y valores.<br><br>
+    Exigencia moral: La responsabilidad ética que se espera de un individuo para cumplir con ciertos estándares y principios morales.<br><br>
+    Eudemonismo: Una teoría ética que sostiene que la búsqueda de la felicidad personal y el bienestar es el objetivo principal de la vida humana.<br><br>
+    Explotación: Acción de aprovecharse de otra persona para obtener un beneficio.<br><br>
+  `;
+    mostrarAlerta(palabrasConE);
+  });   
+
+     document.getElementById('mostrarAlertaF').addEventListener('click', function() {
+    var palabrasConF = `
+    Haz dado click a palabras con la letra F: las palabras con sus significados son las siguientes.<br><br>
+    Falta: Infracción de una ley o norma moral.<br><br>
+    Felicidad: Estado de satisfacción y plenitud que se experimenta cuando se cumplen los propios deseos y aspiraciones.<br><br>
+    Filantropía: Actitud o disposición a ayudar a los demás de manera desinteresada.<br><br>
+    Filosofía: Disciplina que se ocupa del estudio de la realidad, del conocimiento y del comportamiento humano.<br><br>
+    Fortaleza: Capacidad de superar obstáculos y dificultades.<br><br>
+    Fraternidad: Sentido de solidaridad y unión entre las personas.<br><br>
+  `;
+    mostrarAlerta(palabrasConF);
+  });   
+
+        document.getElementById('mostrarAlertaG').addEventListener('click', function() {
+    var palabrasConG = `
+    Haz dado click a palabras con la letra G: las palabras con sus significados son las siguientes.<br><br>
+    Género: Conjunto de características biológicas, sociales y culturales que definen a un hombre o una mujer.<br><br>
+    Generosidad: Asistir a quien lo necesita sin obtener nada a cambio.<br><br>
+    Genocidio: Acto de exterminar deliberadamente a un grupo de personas por motivos raciales, étnicos o religiosos.<br><br>
+    Golpe bajo: Acción que se realiza con la intención de causar daño o perjudicar a otra persona.<br><br>
+  `;
+    mostrarAlerta(palabrasConG);
+  });
+
+           document.getElementById('mostrarAlertaH').addEventListener('click', function() {
+    var palabrasConH = `
+    Haz dado click a palabras con la letra H: las palabras con sus significados son las siguientes.<br><br>
+    Hipocresia: Conducta de fingir tener o sentir cualidades o sentimientos que no se tienen o no se sienten.<br><br>
+    Honestidad: Actitud de decir la verdad y actuar de acuerdo con lo que se cree.<br><br>
+    Honor: Valor que se asocia con la integridad, la honestidad y la dignidad.<br><br>
+    Humanitarismo: Enfoque ético que promueve la compasión, la benevolencia y la ayuda hacia otros seres humanos, especialmente aquellos en situaciones de necesidad o sufrimiento.<br><br>
+    Humildad: Conciencia de los propios límites y la capacidad de aceptar la ayuda de los demás.<br><br>
+
+  `;
+    mostrarAlerta(palabrasConH);
+  });
+
+   document.getElementById('mostrarAlertaI').addEventListener('click', function() {
+    var palabrasConI = `
+    Haz dado click a palabras con la letra I: las palabras con sus significados son las siguientes.<br><br>
+    Idealismo: Tendencia a idealizar la realidad, a ver las cosas de manera positiva y optimista.<br><br>
+    Igualdad: Principio moral que sostiene que todos los individuos deben ser tratados con el mismo respeto y consideración, independientemente de sus diferencias.<br><br>
+    Improbidad: Falta de moralidad, integridad y honradez en las acciones.<br><br>
+    Independencia: Capacidad de actuar de acuerdo con la propia voluntad, sin depender de los demás.<br><br>
+    Injusticia: Acto que viola el derecho o la equidad.<br><br>
+    Inmoralidad: Falta de moralidad o de bondad moral.<br><br>
+    Integridad: Conjunto de cualidades que hacen que una persona sea honesta, honrada y recta.<br><br>
+    Intuicionismo: Concepción filosófica que defiende la prioridad de la intuición sobre las demás formas de conocimiento.<br><br>
+    Ira: Estado de ánimo de furia o indignación.<br><br>
+  `;
+    mostrarAlerta(palabrasConI);
+  });
+
+     document.getElementById('mostrarAlertaJ').addEventListener('click', function() {
+    var palabrasConJ = `
+    Haz dado click a palabras con la letra J: las palabras con sus significados son las siguientes.<br><br>
+    Juicio ético: Acto mental que permite juzgar nuestras acciones, conductas o procedimientos de cara al conjunto de alternativas existentes y al marco de valores y principios que nos guían.<br><br>
+    Juicio moral: Acto moral que establece si una cierta conducta o situacion tiene contenido ético o, por el contrario, carece de estos principios.<br><br>
+    Juicio: Es una facultad del alma que permite diferenciar entre el bien y el mal.<br><br>
+    Justicia penal: Conjunto de normas y procedimientos que se utilizan para investigar, procesar y castigar los delitos.<br><br>
+    Justicia: Principio moral que establece que todos los individuos deben ser tratados de manera equitativa.<br><br>
+
+  `;
+    mostrarAlerta(palabrasConJ);
+  }); 
+
+     document.getElementById('mostrarAlertaK').addEventListener('click', function() {
+    var palabrasConK = `
+    Haz dado click a palabras con la letra K: las palabras con sus significados son las siguientes.<br><br>
+    Karma: Principio filosófico que establece que las acciones de una persona en esta vida tendrán consecuencias en la siguiente.<br><br>
+  `;
+    mostrarAlerta(palabrasConK);
+  });   
+
+     document.getElementById('mostrarAlertaL').addEventListener('click', function() {
+    var palabrasConL = `
+    Haz dado click a palabras con la letra L: las palabras con sus significados son las siguientes.<br><br>
+    Lealtad: Cualidad de ser fiel y comprometido con los demás.<br><br>
+    Libertad de expresión: Derecho de las personas a expresar sus ideas y opiniones sin censura.<br><br>
+    Libertad: Capacidad de actuar sin interferencias externas.<br><br>
+    Liderazgo: Capacidad de influir en otros para que sigan una determinada dirección.<br><br>
+    Lujuria: Deseo sexual intenso e incontrolable.<br><br>
+  `;
+    mostrarAlerta(palabrasConL);
+  });   
+
+     document.getElementById('mostrarAlertaM').addEventListener('click', function() {
+    var palabrasConM = `
+    Haz dado click a palabras con la letra M: las palabras con sus significados son las siguientes.<br><br>
+    Mal: Aquello que es indeseable y que se considera incorrecto.<br><br>
+    Maldad: Cualidad de una persona que hace daño o causa sufrimiento a los demás.<br><br>
+    Maquiavelismo: Doctrina política que sostiene que los fines justifican los medios.<br><br>
+    Mentira: Declaración falsa que se hace con la intención de engañar a otra persona.<br><br>
+    Misericordia: Disposición a perdonar o conceder una indulgencia a los demás.<br><br>
+    Moral: Conjunto de valores y creencias que rigen la conducta de las personas.<br><br>
+    Moralismo: Actitud de juzgar a los demás de acuerdo con unos principios morales estrictos.<br><br>
+    Motivación: Proceso por el cual el sujeto se plantea un objetivo, utiliza los recursos adecuados y mantiene una determinada conducta, con el propósito de lograr una meta.<br><br>
+  `;
+    mostrarAlerta(palabrasConM);
+  });   
+
+     document.getElementById('mostrarAlertaN').addEventListener('click', function() {
+    var palabrasConN = `
+    Haz dado click a palabras con la letra N: las palabras con sus significados son las siguientes.<br><br>
+    Naturaleza humana: Conjunto de características físicas, psicológicas y sociales que definen a los seres humanos.<br><br>
+    No discriminación: Principio moral que sostiene que las personas no deben ser discriminadas por su origen social, económico, cultural, racial, religioso, sexual, etc.<br><br>
+    No maleficencia:  Principio ético que establece que las personas deben abstenerse de causar daño a los demás, ya sea físico, psicológico o moral.<br><br>
+    Norma: Regla o principio que rige el comportamiento de las personas.<br><br>
+    Normas morales:Reglas que se consideran correctas y que rigen el comportamiento de los seres humanos.<br><br>
+  `;
+    mostrarAlerta(palabrasConN);
+  });   
+
+     document.getElementById('mostrarAlertaO').addEventListener('click', function() {
+    var palabrasConO = `
+    Haz dado click a palabras con la letra O: las palabras con sus significados son las siguientes.<br><br>
+    Obediencia: Actitud de cumplir las órdenes o las normas establecidas.<br><br>
+    Objetividad moral: Capacidad de juzgar la moralidad de una acción de manera imparcial.<br><br>
+    Obligación: Deber moral de realizar una acción o abstenerse de realizarla.<br><br>
+    Odio: Sentimiento de repugnancia o rechazo hacia una persona o cosa.<br><br>
+    Ontología:La ontología es la rama de la filosofía que estudia la naturaleza del ser. Se ocupa de la existencia, la esencia y las propiedades de los seres.<br><br>
+    Oportunidad: Posibilidad de hacer o conseguir algo.<br><br>
+    Opresión: Situación en la que un grupo de personas ejerce un poder injusto sobre otro grupo.<br><br>
+    Optimismo: Tendencia a ver las cosas de manera positiva y optimista.<br><br>
+  `;
+    mostrarAlerta(palabrasConO);
+  });
+
+     document.getElementById('mostrarAlertaP').addEventListener('click', function() {
+    var palabrasConP = `
+    Haz dado click a palabras con la letra P: las palabras con sus significados son las siguientes.<br><br>
+    Pacifismo: Doctrina que promueve la no violencia como medio de resolución de conflictos.<br><br>
+    Papel social: Conjunto de roles y funciones que se espera que una persona desempeñe en una sociedad determinada.<br><br>
+    Paz:Estado de ausencia de guerra o conflicto.<br><br>
+    Perdón:  Decisión consciente y deliberada de liberar sentimientos de resentimiento o venganza hacia una persona o grupo que nos ha lastimado.<br><br>
+    Persecución: Acto de hostigar o maltratar a una persona o grupo de personas por motivos ideológicos, religiosos, raciales, etc.<br><br>
+    Perspectiva: Punto de vista desde el que se analiza una situación.<br><br>
+    Pobreza:Carencia de los recursos necesarios para satisfacer las necesidades de una población o un grupo de individuos.<br><br>
+    Prejuicio: Actitud de rechazo o discriminación hacia una persona o grupo de personas por motivos de raza, religión, sexo, orientación sexual, etc.<br><br>
+    Prudencia: Capacidad de actuar con sensatez y precaución.<br><br>
+  `;
+    mostrarAlerta(palabrasConP);
+  });
+
+     document.getElementById('mostrarAlertaR').addEventListener('click', function() {
+    var palabrasConR = `
+    Haz dado click a palabras con la letra R: las palabras con sus significados son las siguientes.<br><br>
+    Racismo: Actitud de discriminación o prejuicio hacia las personas de una raza u origen étnico determinado.<br><br>
+    Relativismo moral:Teoría que sostiene que los principios morales son relativos y dependen de la cultura o el contexto en el que se aplican.<br><br>
+    Respeto: Actitud de consideración y consideración hacia los demás.<br><br>
+    Responsabilidad social:Es la obligación moral que tienen las personas y las organizaciones de actuar de manera responsable ante los demás y el medio ambiente.<br><br>
+    Responsabilidad: Obligación de responder por las propias acciones.<br><br>
+  `;
+    mostrarAlerta(palabrasConR);
+  });   
+
+     document.getElementById('mostrarAlertaS').addEventListener('click', function() {
+    var palabrasConS = `
+    Haz dado click a palabras con la letra S: las palabras con sus significados son las siguientes.<br><br>
+    Sacrificio: Acción de renunciar a algo valioso por algo que se considera superior.,
+    Sensibilidad: Capacidad de percibir y comprender las cosas.,
+    Sinceridad: Valor ético que implica la honestidad genuina, transparencia y autenticidad en las acciones y comunicaciones.
+    Solidaridad:Sentimiento de unidad y apoyo mutuo que existe entre los miembros de un grupo o comunidad.,
+    Subjetivismo moral: Teoría ética que sostiene que la moralidad de una acción depende de la opinión de cada persona.,
+  `;
+    mostrarAlerta(palabrasConS);
+  });   
+
+     document.getElementById('mostrarAlertaT').addEventListener('click', function() {
+    var palabrasConT = `
+    Haz dado click a palabras con la letra T: las palabras con sus significados son las siguientes.<br><br>
+    Tecnoética: Disciplina que estudia la interacción entre la tecnología y los valores éticos.<br><br>
+    Tolerancia: Actitud de aceptar las diferencias de los demás.<br><br>
+  `;
+    mostrarAlerta(palabrasConT);
+  });
+
+     document.getElementById('mostrarAlertaU').addEventListener('click', function() {
+    var palabrasConU = `
+    Haz dado click a palabras con la letra U: las palabras con sus significados son las siguientes.<br><br>
+    Utilitarismo: Teoría ética que sostiene que la moralidad de una acción se determina por su utilidad, es decir, por el bien que produce.<br><br>
+  `;
+    mostrarAlerta(palabrasConU);
+  });
+
+     document.getElementById('mostrarAlertaV').addEventListener('click', function() {
+    var palabrasConV = `
+    Haz dado click a palabras con la letra V: las palabras con sus significados son las siguientes.<br><br>
+    Valor: Cualidad que hace que algo sea deseable o apreciado.<br><br>
+    Valores éticos: Son principios fundamentales que guían el comportamiento humano y se consideran deseables en una sociedad o cultura determinada.<br><br>
+    Valores morales:Creencias que consideramos importantes y que guían nuestro comportamiento. Pueden ser invididuales o colectivos.<br><br>
+    Verdad: Propiedad de las cosas de ser lo que son.<br><br>
+    Vicio: Cualidad moral que se considera negativa.<br><br>
+    Virtud: Cualidad moral deseable, como la honestidad, la justicia o la bondad.<br><br>
+    Virtudes éticas: Cualidades morales deseables como la honestidad, la lealtad y la compasión.<br><br>
+  `;
+    mostrarAlerta(palabrasConV);
+  });   
+</script>
+</body>
+</html>

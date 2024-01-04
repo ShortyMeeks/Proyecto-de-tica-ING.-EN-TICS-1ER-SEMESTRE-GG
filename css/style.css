@@ -1,0 +1,403 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+}
+
+body {
+	font-family: Berlin Sans FB;
+	background: linear-gradient(70deg, rgba(250, 233, 120, 1)50%,
+	rgba(100, 215, 100, 1.0)60%);
+	display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Altura mínima del viewport */
+}
+
+
+/*::Menu::*/
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.content {
+	min-height: 80px;
+	background: linear-gradient(
+		90deg, 
+		rgba(47, 233, 240, 1)0%, 
+		rgba(80, 49, 145, 1)70%
+
+	);
+}
+
+.menu {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo {
+	font-size: 25px;
+	color: #ffffff;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.menu .navbar ul li {
+	position: relative;
+	float: left;
+}
+
+.menu .navbar ul li a {
+	font-size: 18px;
+	padding: 20px;
+	color: #DEDEDE;
+	display: block;
+	font-weight: bold;
+}
+
+.menu .navbar ul li a:hover {
+	color: lightgreen;	
+}
+
+#menu {
+	display: none;
+}
+
+.menu-icono {
+	width: 25px;
+}
+
+.menu label {
+	cursor: pointer;
+	display: none;
+}
+
+h1 {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	text-shadow: 2px 2px 4px rgba(0,0,0,2.0);
+	font-size: 2em;
+	color: white;
+}
+
+/*::Pie de pagina::*/
+
+.pie-pagina{
+	width: 100%;
+	background-color: lightgreen;
+}
+
+.pie-pagina .grupo-1{
+	width: 100%;
+	max-width: 1200px;
+	margin: auto;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 50px;
+	padding: 45px 0px;
+}
+
+.pie-pagina .grupo-1 .box figure{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.pie-pagina .grupo-1 .box figure img{
+	width: 70px;
+}
+
+.pie-pagina .grupo-1 .box .medio{
+	text-align: center;
+	color: purple;
+	margin-bottom: 5px;
+	font-size: 20px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+.pie-pagina .grupo-1 .box .final{
+	color: purple;
+	margin-bottom: 10px;
+	font-size: 25px;
+}
+
+.pie-pagina .grupo-1 .red-social a img{
+	display: inline-block;
+	text-decoration: none;
+	width: 40px;
+	height: 40px;
+	line-height: 45px;
+	color: #fff;
+	margin-right: 10px;
+	background-color: greenyellow;
+	text-align: center;
+	transition: all 300ms ease;
+	margin: 0 auto;
+}
+
+.pie-pagina .grupo-2{
+	background-color: black;
+	padding: 15px 10px;
+	text-align: center;
+	color: #ffffff;
+}
+
+
+/*::Diccionario::*/
+.dicc {
+  margin: 0 auto;
+  margin-top: 60px;
+  margin-bottom: 250px;
+  display: block;
+  background-color: #ffffff;
+  width: 90%;
+  position: relative;
+  padding: 90px 70px;
+  border-radius: 10px;
+  box-shadow: rgba(46, 233, 240, 0.4) 5px 5px, rgba(46, 233, 240, 0.3) 10px 10px,
+    rgba(46, 233, 240, 0.2) 15px 15px, rgba(46, 233, 240, 0.1) 20px 20px,
+    rgba(46, 233, 240, 0.05) 25px 25px;
+}
+
+.contenedor-de-busqueda {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.contenedor-de-busqueda input {
+  padding: 7px;
+  width: 70%;
+  border: none;
+  outline: none;
+  border-bottom: 5px solid #ae7f;
+  font-size: 16px;
+}
+
+.contenedor-de-busqueda button {
+  padding: 5px 0;
+  width: 25%;
+  background-color: #ae7f;
+  border: none;
+  outline: none;
+  box-shadow: 10px 5px 0 #00a8c6;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+.resultado {
+  position: relative;
+}
+
+.resultado h3 {
+  font-size: 25px;
+  color: #000000;
+}
+
+.resultado .palabra {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 90px;
+}
+
+.resultado img {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  margin: auto;
+  margin-top: 5px;
+}
+
+.significado-palabra {
+  color: black;
+  font-size: 15px;
+  justify-content: space-between;
+}
+
+.sonic{
+display: block;
+width: 150px;
+height: 150px;
+position: initial;
+margin: auto;
+}
+
+.pinguino{
+display: block;
+width: 150px;
+height: 150px;
+position: initial;
+margin: auto;
+}
+
+
+/*Card*/
+.card-container {
+		overflow: auto;
+		overflow-wrap: break-word;
+    width: 50%;
+    height: auto;
+    background-color: #fff;
+    border-radius: 30px;
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 140px;
+}
+
+.image-container{
+	padding: 15px;
+	position: sticky;
+  width: 100%;
+}
+
+.image-container img{
+	justify-items: center;
+	justify-content: center;
+	display: block;
+	position: relative;
+	margin: 0 auto;
+  width: 100%;
+  border-radius: 40px 40px;
+}
+
+.text-container{
+	position: relative;
+	margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 15px;
+}
+
+ .nombre{
+    color: rgb(26, 24, 24);
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.title{
+	display: block;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.biography{
+	display: block;
+    color: rgb(26, 24, 24);
+    font-size: 1em;
+    text-align: center;
+}
+
+.logosredes{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+.logosredes img{
+	width: 70px;
+	height: 70px;
+}
+
+i{
+    font-size: 25px;
+    color: rgb(26, 24, 24);
+    padding: 0px 8px;
+    cursor: pointer;
+    transition: 1s ease-in;
+}
+
+
+@media screen and (max-width:800px){
+
+	.contenido{
+		min-height: 70px;
+	}
+
+	.menu{
+		top:0;
+		padding: 20px;
+	}
+
+	.menu label{
+		display: initial;
+	}
+
+	.menu .navbar{
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		background: linear-gradient(
+		90deg, 
+		rgba(47, 233, 240, 1)0%, 
+		rgba(80, 49, 145, 1)70%
+
+		);
+		display: none;
+	}
+
+	.menu .navbar ul li {
+		width: 100%;
+	}
+
+	#menu:checked ~ .navbar{
+		display: initial;
+	}
+
+	.pie-pagina .grupo-1{
+	width: 100%;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 30px;
+	padding: 35px 0px;
+	}
+
+	.dicc {
+  	margin:  0 auto;
+  	justify-content: center;
+  	margin-top: 60px;
+  	margin-bottom: 250px;
+  	display: block;
+  	background-color: #ffffff;
+  	width: 90%;
+  	position: relative;
+  	padding: 80px 50px;
+  	border-radius: 10px;
+  	box-shadow: rgba(46, 233, 240, 0.4) 5px 5px, rgba(46, 233, 240, 0.3) 10px 10px,
+    rgba(46, 233, 240, 0.2) 15px 15px, rgba(46, 233, 240, 0.1) 20px 20px,
+    rgba(46, 233, 240, 0.05) 25px 25px;
+	}
+
+	
+   .contenedor-de-busqueda input {
+   padding: 7px;
+   width: 70%;
+   border: none;
+   outline: none;
+   border-bottom: 5px solid #ae7f;
+   font-size: 10px;
+	}
+
+
+
+
+
+
+}
